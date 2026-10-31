@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Neighborhood Grocery Store (Kirana) Credit Ledger (Khata)</title>
+<link href="https://fonts.googleapis.com/css2?family=Mukta:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1><span class="em">🛒</span> Neighborhood Grocery Store (Kirana) Credit Ledger (Khata)</h1>
+  <p class="sub">Keep track of who owes you, and what they have paid back.</p>
+  <div id="total" class="total" role="status" aria-live="polite"></div>
+</header>
+<main>
+  <section class="panel" aria-label="Customer directory">
+    <h2>Customer khata directory</h2>
+    <input id="search" type="search" placeholder="🔍 Search name or mobile" aria-label="Search customers">
+    <div class="chips" id="chips"><button type="button" data-f="all" class="chip on">All</button><button type="button" data-f="due" class="chip">🔴 Due</button><button type="button" data-f="clear" class="chip">🟢 Clear</button></div>
+    <select id="sort" aria-label="Sort customers"><option value="name">Sort: Added order</option><option value="high">Sort: Highest due first</option></select>
+    <ul id="list" class="list"></ul>
+    <details id="addbox">
+      <summary>+ Add new customer</summary>
+      <label for="nn">Name</label><input id="nn" autocomplete="off">
+      <label for="nm">Mobile number</label><input id="nm" inputmode="numeric" maxlength="10" placeholder="10 digits">
+      <button class="btn add" id="addBtn" type="button">Add customer</button>
+      <div id="addMsg" class="msg"></div>
+    </details>
+  </section>
+  <section class="panel" id="detail" aria-label="Customer account"></section>
+</main>
+<div id="toast" class="toast" role="status"></div>
+<script src="script.js"></script>
+</body>
+</html>
